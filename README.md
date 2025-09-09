@@ -1,4 +1,8 @@
+
+![](https://github.com/kaanreal/Portfolio/blob/main/assets/images/logo.png?raw=true)
+
 ![Snake Game](https://github.com/kaanreal/Contribution-Snake/blob/eecbf705debbd04fabfbfe198addb0b6353bbd06/only-svg/github-contribution-grid-snake-dark.svg)
+
 
 ## 🌐 Socials:
 [![Reddit](https://img.shields.io/badge/Reddit-%23FF4500.svg?logo=Reddit&logoColor=white)](https://reddit.com/user/kaanreal) [![X](https://img.shields.io/badge/X-black.svg?logo=X&logoColor=white)](https://x.com/kaanreal) [![email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:info@kaan.space) 
