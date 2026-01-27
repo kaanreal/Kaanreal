@@ -11,7 +11,7 @@
   
   ---
   
-  ![Snake Game](https://github.com/kaanreal/Contribution-Snake/blob/eecbf705debbd04fabfbfe198addb0b6353bbd06/only-svg/github-contribution-grid-snake-dark.svg)
+  ![Snake Game](https://raw.githubusercontent.com/kaanreal/Contribution-Snake/refs/heads/manual-run-output/only-svg/github-contribution-grid-snake-dark.svg)
 </div>
 
 ## 🛠️ Currently Learning & Building
