@@ -5,7 +5,7 @@
   
   ### 🚀 Full-Stack Developer | Hardware Enthusiast | Creative Designer
   
-  [![email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:info@kaan.space)
+  [![email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:info@kaanreal.me)
   
   ---
   
