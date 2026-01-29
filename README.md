@@ -13,7 +13,6 @@
 </div>
 
 ## 🛠️ Currently Learning & Building
-I am currently expanding my software engineering toolkit with a focus on system-level programming and cross-platform UI:
 - ⚡ **C++** (High-performance applications)
 - 🔷 **C#** (.NET Ecosystem & Scripting)
 - 🖼️ **Qt Framework** (Modern GUI Development)
