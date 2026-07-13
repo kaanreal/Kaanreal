@@ -5,8 +5,10 @@
   
   ### 🚀 Full-Stack Developer | Hardware Enthusiast | Creative Designer
   
-  [![email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:info@kaanreal.me)
   [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Z0O6233RR3)
+  
+  [![email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:info@kaanreal.me)
+
   ---
   
   ![Snake Game](https://raw.githubusercontent.com/kaanreal/Contribution-Snake/refs/heads/manual-run-output/only-svg/github-contribution-grid-snake-dark.svg)
