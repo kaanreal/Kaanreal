@@ -36,13 +36,11 @@ jobs:
               .filter(repo => !repo.fork)
               .filter(repo => repo.name !== "Kaanreal")
               .slice(0, 6)
-              .map(repo =>
-                `├── 🌸 ${repo.name}`
-              );
+              .map(repo => `├── 🌸 ${repo.name}`);
 
-            const section = `
-<!-- START_SECTION:projects -->
-\`\`\`text
+            const section =
+`<!-- START_SECTION:projects -->
+\`\`\`
 📂 latest projects
 
 ${projects.join("\n")}
@@ -53,7 +51,7 @@ ${projects.join("\n")}
 
             readme = readme.replace(
               /<!-- START_SECTION:projects -->[\s\S]*?<!-- END_SECTION:projects -->/,
-              section.trim()
+              section
             );
 
             fs.writeFileSync("README.md", readme);
