@@ -40,6 +40,16 @@
 > This section is automatically updated from my latest GitHub repositories.
 
 <!-- START_SECTION:projects -->
+```text
+📂 latest projects
+
+├── 🌸 henkan
+├── 🌸 homebrew-tap
+├── 🌸 AI-generated-vibrojack
+├── 🌸 jukebox
+├── 🌸 osu-tag
+├── 🌸 Portfolio
+```
 <!-- END_SECTION:projects -->
 
 ---
