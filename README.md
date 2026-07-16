@@ -43,12 +43,12 @@
 <pre>
 📂 latest projects
 
-├── 🌸 <a href="https://github.com/kaanreal/henkan">henkan</a>
-├── 🌸 <a href="https://github.com/kaanreal/homebrew-tap">homebrew-tap</a>
-├── 🌸 <a href="https://github.com/kaanreal/AI-generated-vibrojack">AI-generated-vibrojack</a>
-├── 🌸 <a href="https://github.com/kaanreal/jukebox">jukebox</a>
-├── 🌸 <a href="https://github.com/kaanreal/osu-tag">osu-tag</a>
-├── 🌸 <a href="https://github.com/kaanreal/Portfolio">Portfolio</a>
+├── 🌸 <a href="https://github.com/kaanreal/henkan" style="text-decoration:none;color:#89CFF0;">henkan</a>
+├── 🌸 <a href="https://github.com/kaanreal/homebrew-tap" style="text-decoration:none;color:#89CFF0;">homebrew-tap</a>
+├── 🌸 <a href="https://github.com/kaanreal/AI-generated-vibrojack" style="text-decoration:none;color:#89CFF0;">AI-generated-vibrojack</a>
+├── 🌸 <a href="https://github.com/kaanreal/jukebox" style="text-decoration:none;color:#89CFF0;">jukebox</a>
+├── 🌸 <a href="https://github.com/kaanreal/osu-tag" style="text-decoration:none;color:#89CFF0;">osu-tag</a>
+├── 🌸 <a href="https://github.com/kaanreal/Portfolio" style="text-decoration:none;color:#89CFF0;">Portfolio</a>
 </pre>
 <!-- END_SECTION:projects -->
 
