@@ -37,7 +37,7 @@ jobs:
               .filter(repo => repo.name.toLowerCase() !== "kaanreal")
               .slice(0, 6)
               .map(repo => {
-                return `├── 🌸 <a href="${repo.html_url}">${repo.name}</a>`;
+                return `├── 🌸 <a href="${repo.html_url}" style="text-decoration:none;color:#89CFF0;">${repo.name}</a>`;
               });
 
             const newSection = [
