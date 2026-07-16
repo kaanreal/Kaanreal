@@ -2,7 +2,7 @@ name: Update Projects
 
 on:
   schedule:
-    - cron: "0 */6 * * *"
+    - cron: "0 12 * * *"
   workflow_dispatch:
 
 permissions:
@@ -16,7 +16,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Generate projects section
+      - name: Update projects section
         uses: actions/github-script@v7
         with:
           script: |
@@ -37,16 +37,16 @@ jobs:
               .filter(repo => repo.name.toLowerCase() !== "kaanreal")
               .slice(0, 6)
               .map(repo => {
-                return `├── 🌸 ${repo.name}`;
+                return `├── 🌸 <a href="${repo.html_url}">${repo.name}</a>`;
               });
 
             const newSection = [
               "<!-- START_SECTION:projects -->",
-              "```text",
+              "<pre>",
               "📂 latest projects",
               "",
               ...projects,
-              "```",
+              "</pre>",
               "<!-- END_SECTION:projects -->"
             ].join("\n");
 
@@ -56,12 +56,11 @@ jobs:
             const regex =
               /<!-- START_SECTION:projects -->[\s\S]*?<!-- END_SECTION:projects -->/;
 
-            if (!regex.test(readme)) {
-              console.log("Project section not found");
-              process.exit(1);
+            if (regex.test(readme)) {
+              readme = readme.replace(regex, newSection);
+            } else {
+              readme += "\n\n" + newSection;
             }
-
-            readme = readme.replace(regex, newSection);
 
             fs.writeFileSync(readmePath, readme);
 
@@ -72,6 +71,10 @@ jobs:
 
           git add README.md
 
-          git diff --cached --quiet || git commit -m "🌸 update projects section"
+          if git diff --cached --quiet; then
+            echo "No changes"
+            exit 0
+          fi
 
+          git commit -m "🌸 update projects section"
           git push
