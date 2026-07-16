@@ -31,10 +31,9 @@
 ```text
 📂 current projects
 
-├── 🌸 Cascade
 ├── 🎵 Henkan
-├── 💿 Vinyl
-└── ✨ something I probably started at 2 AM
+├── 👨‍🎓 School projects
+└── ✨ Random things
 ```
 
 > This section is automatically updated from my latest GitHub repositories.
@@ -42,13 +41,6 @@
 <!-- START_SECTION:projects -->
 <pre>
 📂 latest projects
-
-├── 🌸 <a href="https://github.com/kaanreal/henkan" style="text-decoration:none;color:#89CFF0;">henkan</a>
-├── 🌸 <a href="https://github.com/kaanreal/homebrew-tap" style="text-decoration:none;color:#89CFF0;">homebrew-tap</a>
-├── 🌸 <a href="https://github.com/kaanreal/AI-generated-vibrojack" style="text-decoration:none;color:#89CFF0;">AI-generated-vibrojack</a>
-├── 🌸 <a href="https://github.com/kaanreal/jukebox" style="text-decoration:none;color:#89CFF0;">jukebox</a>
-├── 🌸 <a href="https://github.com/kaanreal/osu-tag" style="text-decoration:none;color:#89CFF0;">osu-tag</a>
-├── 🌸 <a href="https://github.com/kaanreal/Portfolio" style="text-decoration:none;color:#89CFF0;">Portfolio</a>
 </pre>
 <!-- END_SECTION:projects -->
 
@@ -69,6 +61,8 @@ building
 └── open source
 ```
 
+and playing osu!mania ofcourse.
+
 ---
 
 ## 🧸 toolbox
@@ -82,7 +76,7 @@ building
 ### frameworks & tools
 
 <p>
-<img src="https://skillicons.dev/icons?i=qt,nodejs,docker,mysql,mariadb,git,github,arduino"/>
+<img src="https://skillicons.dev/icons?i=qt,nodejs,docker,mysql,git,github,arduino"/>
 </p>
 
 ### creative
