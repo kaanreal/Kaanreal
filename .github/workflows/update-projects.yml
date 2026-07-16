@@ -16,7 +16,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Update projects section
+      - name: Generate projects section
         uses: actions/github-script@v7
         with:
           script: |
@@ -34,32 +34,44 @@ jobs:
 
             const projects = repos
               .filter(repo => !repo.fork)
-              .filter(repo => repo.name !== "Kaanreal")
+              .filter(repo => repo.name.toLowerCase() !== "kaanreal")
               .slice(0, 6)
-              .map(repo => `├── 🌸 ${repo.name}`);
+              .map(repo => {
+                return `├── 🌸 ${repo.name}`;
+              });
 
-            const section =
-`<!-- START_SECTION:projects -->
-\`\`\`
-📂 latest projects
+            const newSection = [
+              "<!-- START_SECTION:projects -->",
+              "```text",
+              "📂 latest projects",
+              "",
+              ...projects,
+              "```",
+              "<!-- END_SECTION:projects -->"
+            ].join("\n");
 
-${projects.join("\n")}
-\`\`\`
-<!-- END_SECTION:projects -->`;
+            const readmePath = "README.md";
+            let readme = fs.readFileSync(readmePath, "utf8");
 
-            let readme = fs.readFileSync("README.md", "utf8");
+            const regex =
+              /<!-- START_SECTION:projects -->[\s\S]*?<!-- END_SECTION:projects -->/;
 
-            readme = readme.replace(
-              /<!-- START_SECTION:projects -->[\s\S]*?<!-- END_SECTION:projects -->/,
-              section
-            );
+            if (!regex.test(readme)) {
+              console.log("Project section not found");
+              process.exit(1);
+            }
 
-            fs.writeFileSync("README.md", readme);
+            readme = readme.replace(regex, newSection);
 
-      - name: Commit README update
+            fs.writeFileSync(readmePath, readme);
+
+      - name: Commit changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
           git add README.md
-          git commit -m "update projects section" || exit 0
+
+          git diff --cached --quiet || git commit -m "🌸 update projects section"
+
           git push
