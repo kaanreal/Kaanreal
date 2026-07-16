@@ -40,16 +40,16 @@
 > This section is automatically updated from my latest GitHub repositories.
 
 <!-- START_SECTION:projects -->
-```text
+<pre>
 📂 latest projects
 
-├── 🌸 henkan
-├── 🌸 homebrew-tap
-├── 🌸 AI-generated-vibrojack
-├── 🌸 jukebox
-├── 🌸 osu-tag
-├── 🌸 Portfolio
-```
+├── 🌸 <a href="https://github.com/kaanreal/henkan">henkan</a>
+├── 🌸 <a href="https://github.com/kaanreal/homebrew-tap">homebrew-tap</a>
+├── 🌸 <a href="https://github.com/kaanreal/AI-generated-vibrojack">AI-generated-vibrojack</a>
+├── 🌸 <a href="https://github.com/kaanreal/jukebox">jukebox</a>
+├── 🌸 <a href="https://github.com/kaanreal/osu-tag">osu-tag</a>
+├── 🌸 <a href="https://github.com/kaanreal/Portfolio">Portfolio</a>
+</pre>
 <!-- END_SECTION:projects -->
 
 ---
