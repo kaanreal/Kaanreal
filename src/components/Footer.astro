@@ -5,7 +5,7 @@ import { site } from "@/data/site";
 <footer class="py-16 px-6 border-t border-border/50">
   <div class="max-w-3xl mx-auto flex flex-col items-center text-center">
     <img
-      src="/images/main.gif"
+      src={`${import.meta.env.BASE_URL.replace(/\/$/, "")}/images/main.gif`}
       alt="Thank you"
       class="w-24 h-auto rounded-xl mb-6 animate-float"
       loading="lazy"
