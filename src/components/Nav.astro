@@ -1,0 +1,35 @@
+---
+const categories = [
+  { label: "home", href: "/" },
+  { label: "developing", href: "/developing" },
+  { label: "creative", href: "/creative" },
+  { label: "socials", href: "/socials" },
+  { label: "osu!", href: "/osu" },
+];
+
+const { current } = Astro.props;
+---
+
+<nav class="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-bg/80 border-b border-border/50">
+  <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
+    <a href="/" class="font-heading font-bold text-lg text-brand tracking-tight hover:scale-105 transition-transform duration-300">
+      K.
+    </a>
+
+    <div class="flex items-center gap-1">
+      {categories.map((cat) => (
+        <a
+          href={cat.href}
+          class:list={[
+            "text-sm px-4 py-1.5 rounded-full transition-all duration-300",
+            current === cat.label
+              ? "bg-brand/10 text-brand font-medium"
+              : "text-text-muted hover:text-text",
+          ]}
+        >
+          {cat.label}
+        </a>
+      ))}
+    </div>
+  </div>
+</nav>

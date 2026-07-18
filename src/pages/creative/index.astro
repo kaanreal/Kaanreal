@@ -1,0 +1,79 @@
+---
+import Category from "@/layouts/Category.astro";
+
+const works = [
+  {
+    title: "Hycean",
+    date: "22/05/2026",
+    url: "https://osu.ppy.sh/users/36805517",
+    image: "https://i.ibb.co/TMFcfj8d/final.png",
+  },
+  {
+    title: "Kaan",
+    date: "01/03/2026",
+    url: "https://osu.ppy.sh/users/26595459",
+    image: "https://i.ibb.co/hJtWhvdn/Banner.png",
+  },
+];
+
+
+---
+
+<Category
+  title="creative"
+  description="Banners, designs, and visual stuff I make for people."
+  current="creative"
+>
+  <!-- Story -->
+  <div class="mb-10 bg-bg-card border border-dashed border-border rounded-xl px-5 py-4 max-w-lg mx-auto">
+    <p class="text-sm text-text-muted leading-relaxed text-center">
+      i made some <span class="text-text font-medium">banners</span> for people, mostly for osu! profiles. i like keeping it clean and matching the person's vibe.
+    </p>
+  </div>
+
+  <!-- Works -->
+  <div class="mb-14">
+    <p class="text-[11px] font-mono text-text-muted/50 tracking-widest uppercase mb-5">works</p>
+    <div class="space-y-3">
+      {works.map((work) => (
+        <a
+          href={work.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group block bg-bg-card border border-border rounded-xl overflow-hidden card-hover"
+        >
+          <img
+            src={work.image}
+            alt={`Banner for ${work.title}`}
+            class="w-full h-auto"
+            loading="lazy"
+          />
+          <div class="px-4 py-3 flex items-center justify-between">
+            <span class="text-sm font-heading font-semibold text-text group-hover:text-brand transition-colors duration-300">
+              {work.title}
+            </span>
+            <span class="text-[11px] font-mono text-text-muted/50">
+              {work.date}
+            </span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <a
+    href="https://discord.com/users/249879411594100751"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="group block bg-bg-card border border-dashed border-border rounded-xl p-6 text-center card-hover"
+  >
+    <p class="text-2xl mb-2">💬</p>
+    <p class="font-heading font-semibold text-text group-hover:text-brand transition-colors duration-300 mb-1">
+      want a banner?
+    </p>
+    <p class="text-xs text-text-muted">
+      dm me on discord ↗
+    </p>
+  </a>
+</Category>

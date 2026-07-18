@@ -1,0 +1,77 @@
+---
+import Category from "@/layouts/Category.astro";
+
+const USERNAME = "Kaanreal";
+const LANG_COLORS: Record<string, string> = {
+  JavaScript: "#f1e05a", TypeScript: "#3178c6", Python: "#3572A5",
+  Java: "#b07219", "C++": "#f34b7d", C: "#555555", "C#": "#178600",
+  HTML: "#e34c26", CSS: "#563d7c", Rust: "#dea584", Go: "#00ADD8",
+  Ruby: "#701516", Swift: "#F05138", Kotlin: "#A97BFF", Dart: "#00B4AB",
+  Shell: "#89e051", Lua: "#000080", Zig: "#ec915c", Nix: "#7e7eff",
+  "Objective-C": "#438eff", PHP: "#4F5D95", R: "#198CE7",
+};
+
+let repos: any[] = [];
+try {
+  const res = await fetch(`https://api.github.com/users/${USERNAME}/repos?sort=updated&per_page=100`);
+  const data = await res.json();
+  if (Array.isArray(data)) {
+    repos = data
+      .filter((r: any) => !r.fork && r.name.toLowerCase() !== "kaanreal")
+      .slice(0, 12)
+      .map((r: any) => ({ ...r, langColor: LANG_COLORS[r.language] || "#8b8b8b" }));
+  }
+} catch (e) {
+  console.error("Failed to fetch repos:", e);
+}
+---
+
+<Category
+  title="developing"
+  description="Things I've built, am building, or plan to build. Most of these are side projects , tools, experiments, and whatever catches my interest."
+  current="developing"
+>
+  <!-- Story -->
+  <div class="mb-10 bg-bg-card border border-dashed border-border rounded-xl px-5 py-4 max-w-lg mx-auto">
+    <p class="text-sm text-text-muted leading-relaxed text-center">
+    most projects begin as a <em class="text-text/60">"wouldn't it be cool if..."</em> moment. Some ship, most teach me something unexpected 
+    </p>
+  </div>
+
+  <!-- Projects -->
+  <div class="grid sm:grid-cols-2 gap-3">
+    {repos.map((repo) => (
+      <a href={repo.html_url} target="_blank" rel="noopener noreferrer"
+         class="group block bg-bg-card border border-border rounded-xl p-5 card-hover">
+        <div class="flex items-start justify-between mb-2">
+          <h3 class="text-sm font-semibold text-text group-hover:text-brand transition-colors duration-300 truncate">
+            {repo.name}
+          </h3>
+          <span class="text-text-muted/30 group-hover:text-brand text-xs transition-colors duration-300 flex-shrink-0 ml-2">↗</span>
+        </div>
+        <p class="text-xs text-text-muted leading-relaxed mb-4 line-clamp-2">
+          {repo.description || "No description"}
+        </p>
+        <div class="flex items-center gap-3 text-[11px] text-text-muted/70">
+          {repo.language && (
+            <span class="flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full" style={`background-color: ${repo.langColor}`}></span>
+              {repo.language}
+            </span>
+          )}
+          {repo.stargazers_count > 0 && <span>★ {repo.stargazers_count}</span>}
+          {repo.forks_count > 0 && <span>⑂ {repo.forks_count}</span>}
+        </div>
+      </a>
+    ))}
+  </div>
+</Category>
+
+<style>
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

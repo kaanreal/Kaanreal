@@ -1,0 +1,106 @@
+---
+import Category from "@/layouts/Category.astro";
+
+const socials = [
+  {
+    name: "GitHub",
+    handle: "@Kaanreal",
+    url: "https://github.com/Kaanreal",
+    color: "#f0f6fc",
+    icon: `<svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>`,
+  },
+  {
+    name: "Discord",
+    handle: "kaaan",
+    url: "https://discord.com/users/249879411594100751",
+    color: "#5865F2",
+    icon: `<svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg>`,
+  },
+  {
+    name: "Twitter",
+    handle: "@kaanreal",
+    url: "https://x.com/kaanreal",
+    color: "#f0f6fc",
+    icon: `<svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>`,
+  },
+  {
+    name: "Email",
+    handle: "info@kaanreal.me",
+    url: "mailto:info@kaanreal.me",
+    color: "#EA4335",
+    icon: `<svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>`,
+  },
+  {
+    name: "osu!",
+    handle: "Kaan",
+    url: "https://osu.ppy.sh/users/26595459",
+    color: "#FF67AA",
+    icon: `<svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="4"/></svg>`,
+  },
+  {
+    name: "Etterna",
+    handle: "Kaaan",
+    url: "https://etternaonline.com/users/Kaaan",
+    color: "#00D4FF",
+    icon: `<svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>`,
+  },
+  {
+    name: "Bilibili",
+    handle: "Kaan",
+    url: "https://space.bilibili.com/3707001513183594",
+    color: "#00A1D6",
+    icon: `<svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M17.813 4.653h.854c1.51.054 2.769.578 3.773 1.574 1.004.995 1.524 2.249 1.56 3.76v7.36c-.036 1.51-.556 2.769-1.56 3.773s-2.262 1.524-3.773 1.56H5.333c-1.51-.036-2.769-.556-3.773-1.56S.036 18.858 0 17.347v-7.36c.036-1.511.556-2.765 1.56-3.76 1.004-.996 2.262-1.52 3.773-1.574h.774l-1.174-1.12a1.234 1.234 0 0 1-.373-.906c0-.356.124-.658.373-.907l.027-.027c.267-.249.573-.373.92-.373.347 0 .653.124.92.373L9.653 4.44c.071.071.134.142.187.213h4.267a.836.836 0 0 1 .16-.213l2.853-2.747c.267-.249.573-.373.92-.373.347 0 .662.124.929.373.249.249.373.551.373.907 0 .355-.124.657-.373.906zM5.333 7.24c-.746.018-1.373.276-1.88.773-.506.498-.769 1.13-.786 1.894v7.52c.017.764.28 1.395.786 1.893.507.498 1.134.756 1.88.773h13.334c.746-.017 1.373-.275 1.88-.773.506-.498.769-1.129.786-1.893v-7.52c-.017-.765-.28-1.396-.786-1.894-.507-.497-1.134-.755-1.88-.773zM8 11.107c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c.017-.391.15-.711.4-.96.249-.249.56-.373.933-.373zm8 0c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c.017-.391.15-.711.4-.96.249-.249.56-.373.933-.373z"/></svg>`,
+  },
+  {
+    name: "MAMES",
+    handle: "Kaan",
+    url: "https://web.mamesosu.net/profile/6790/mania",
+    color: "#FFD700",
+    icon: `<svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>`,
+  },
+  {
+    name: "Buy Me a Coffee",
+    handle: "kaandev",
+    url: "https://buymeacoffee.com/kaandev",
+    color: "#FFDD00",
+    icon: `<svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M20 3H4v10a4 4 0 004 4h6a4 4 0 004-4v-1h2a2 2 0 002-2V5a2 2 0 00-2-2zm0 8h-2V5h2v6zM4 19h16v2H4z"/></svg>`,
+  },
+];
+---
+
+<Category
+  title="socials"
+  description=" everywhere you can find me."
+  current="socials"
+>
+  <!-- Story -->
+  <div class="mb-10 bg-bg-card border border-dashed border-border rounded-xl px-5 py-4 max-w-lg mx-auto">
+    <p class="text-sm text-text-muted leading-relaxed text-center">
+      i'm mostly on <span class="text-text font-medium">discord</span> and <span class="text-text font-medium">twitter</span>. i don't post much but i'm always around. dm me anytime 🤍
+    </p>
+  </div>
+
+  <!-- Socials grid -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-xl mx-auto">
+    {socials.map((s) => (
+      <a
+        href={s.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group flex items-center gap-4 bg-bg-card border border-border/50 rounded-2xl px-5 py-4 card-hover transition-all duration-300 hover:border-border"
+      >
+        <span
+          class="w-11 h-11 rounded-xl flex items-center justify-center transition-colors duration-300"
+          style={`background-color: ${s.color}15; color: ${s.color}`}
+        >
+          <span set:html={s.icon} />
+        </span>
+        <div class="min-w-0">
+          <p class="text-sm font-semibold text-text group-hover:text-brand transition-colors duration-300 truncate">{s.name}</p>
+          <p class="text-xs text-text-muted/50 truncate">{s.handle}</p>
+        </div>
+        <span class="ml-auto text-text-muted/15 group-hover:text-brand/50 group-hover:translate-x-1 transition-all duration-300 text-sm flex-shrink-0">→</span>
+      </a>
+    ))}
+  </div>
+</Category>

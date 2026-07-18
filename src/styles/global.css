@@ -1,0 +1,331 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #FFF2ED;
+  --color-bg-card: #FFFFFF;
+  --color-bg-elevated: #FFF9F6;
+  --color-surface: #FFFFFF;
+  --color-text: #2D1B33;
+  --color-text-muted: #8B7080;
+  --color-brand: #D4605A;
+  --color-brand-glow: rgba(212, 96, 90, 0.15);
+  --color-secondary: #9B82C0;
+  --color-tertiary: #6BA368;
+  --color-accent: #C4874A;
+  --color-border: #F0D5CB;
+  --color-border-hover: #E0BAA9;
+
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-heading: "Quicksand", "Nunito", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", ui-monospace, monospace;
+}
+
+/* --- Themes --- */
+
+[data-theme="lavender"] {
+  --color-bg: #F3EEFF;
+  --color-bg-card: #FFFFFF;
+  --color-bg-elevated: #F9F5FF;
+  --color-text: #2A1F3D;
+  --color-text-muted: #8A7BA0;
+  --color-brand: #9B72CF;
+  --color-brand-glow: rgba(155, 114, 207, 0.15);
+  --color-secondary: #D4605A;
+  --color-border: #E4DAF5;
+  --color-border-hover: #D0C0EB;
+}
+
+[data-theme="mint"] {
+  --color-bg: #EEFAF5;
+  --color-bg-card: #FFFFFF;
+  --color-bg-elevated: #F4FDF9;
+  --color-text: #1A2E28;
+  --color-text-muted: #6B9A8A;
+  --color-brand: #3DAA82;
+  --color-brand-glow: rgba(61, 170, 130, 0.15);
+  --color-secondary: #C4874A;
+  --color-border: #C8EBD9;
+  --color-border-hover: #A8DEC5;
+}
+
+[data-theme="rose"] {
+  --color-bg: #FFF0F3;
+  --color-bg-card: #FFFFFF;
+  --color-bg-elevated: #FFF7F9;
+  --color-text: #331B24;
+  --color-text-muted: #A07888;
+  --color-brand: #D4567A;
+  --color-brand-glow: rgba(212, 86, 122, 0.15);
+  --color-secondary: #7B8EC4;
+  --color-border: #F5D4DC;
+  --color-border-hover: #EAB8C4;
+}
+
+[data-theme="ocean"] {
+  --color-bg: #EEF5FF;
+  --color-bg-card: #FFFFFF;
+  --color-bg-elevated: #F5F9FF;
+  --color-text: #1B2838;
+  --color-text-muted: #6E8BA0;
+  --color-brand: #4A90D4;
+  --color-brand-glow: rgba(74, 144, 212, 0.15);
+  --color-secondary: #C47BA0;
+  --color-border: #D0E2F5;
+  --color-border-hover: #B8D4ED;
+}
+
+[data-theme="sunset"] {
+  --color-bg: #FFF5EE;
+  --color-bg-card: #FFFFFF;
+  --color-bg-elevated: #FFFAF5;
+  --color-text: #332218;
+  --color-text-muted: #A08068;
+  --color-brand: #D48A3C;
+  --color-brand-glow: rgba(212, 138, 60, 0.15);
+  --color-secondary: #C45A7B;
+  --color-border: #F5DCC8;
+  --color-border-hover: #EACAB0;
+}
+
+/* --- Dark mode --- */
+
+[data-mode="dark"] {
+  --color-bg: #141018;
+  --color-bg-card: #1E1824;
+  --color-bg-elevated: #231D2B;
+  --color-text: #F0E6F4;
+  --color-text-muted: #9A88A4;
+  --color-border: #2E2636;
+  --color-border-hover: #3E3548;
+  --color-brand-glow: rgba(212, 96, 90, 0.25);
+}
+
+[data-mode="dark"][data-theme="lavender"] {
+  --color-bg: #16101F;
+  --color-bg-card: #1E1728;
+  --color-text: #EDE4F8;
+  --color-text-muted: #9688B0;
+  --color-border: #2A2238;
+  --color-border-hover: #3A3248;
+  --color-brand-glow: rgba(155, 114, 207, 0.25);
+}
+
+[data-mode="dark"][data-theme="mint"] {
+  --color-bg: #0E1814;
+  --color-bg-card: #162420;
+  --color-text: #E0F4EC;
+  --color-text-muted: #7AAA98;
+  --color-border: #1E3028;
+  --color-border-hover: #2A4038;
+  --color-brand-glow: rgba(61, 170, 130, 0.25);
+}
+
+[data-mode="dark"][data-theme="rose"] {
+  --color-bg: #181014;
+  --color-bg-card: #241820;
+  --color-text: #F4E2EC;
+  --color-text-muted: #B08898;
+  --color-border: #301E28;
+  --color-border-hover: #402A38;
+  --color-brand-glow: rgba(212, 86, 122, 0.25);
+}
+
+[data-mode="dark"][data-theme="ocean"] {
+  --color-bg: #0E1420;
+  --color-bg-card: #162030;
+  --color-text: #E0ECF8;
+  --color-text-muted: #88A0B8;
+  --color-border: #1E2A3A;
+  --color-border-hover: #2A3A4A;
+  --color-brand-glow: rgba(74, 144, 212, 0.25);
+}
+
+[data-mode="dark"][data-theme="sunset"] {
+  --color-bg: #181410;
+  --color-bg-card: #241C16;
+  --color-text: #F4EAE0;
+  --color-text-muted: #B09878;
+  --color-border: #30281E;
+  --color-border-hover: #40382A;
+  --color-brand-glow: rgba(212, 138, 60, 0.25);
+}
+
+/* Theme transition helper */
+.theme-transition,
+.theme-transition *,
+.theme-transition *::before,
+.theme-transition *::after {
+  transition: background-color 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+              color 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+@font-face {
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("https://fonts.gstatic.com/s/quicksand/v36/6xK-dSZaM9iE8KbpRA_LJ3z8mH9BOJvgkP8o58a-xI.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfAZ9hjQ.woff2") format("woff2");
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  transition: background-color 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+              color 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+}
+
+::selection {
+  background-color: var(--color-brand);
+  color: #FFFFFF;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-secondary);
+}
+
+/* --- Animations --- */
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes blink-caret {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes bounce-in {
+  0% { transform: scale(0.95); opacity: 0; }
+  60% { transform: scale(1.02); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease both;
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+.animate-bounce-in {
+  animation: bounce-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Stagger children */
+.stagger > * {
+  animation: fade-in-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.stagger > *:nth-child(1) { animation-delay: 0.05s; }
+.stagger > *:nth-child(2) { animation-delay: 0.12s; }
+.stagger > *:nth-child(3) { animation-delay: 0.19s; }
+.stagger > *:nth-child(4) { animation-delay: 0.26s; }
+.stagger > *:nth-child(5) { animation-delay: 0.33s; }
+.stagger > *:nth-child(6) { animation-delay: 0.40s; }
+
+/* Card hover */
+.card-hover {
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.35s ease,
+              border-color 0.35s ease;
+}
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px var(--color-brand-glow);
+  border-color: var(--color-border-hover);
+}
+
+/* Hero glow orb */
+.glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  animation: glow-pulse 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
