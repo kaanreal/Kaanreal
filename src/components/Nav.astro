@@ -1,10 +1,11 @@
 ---
+const BASE = import.meta.env.BASE_URL;
 const categories = [
-  { label: "home", href: "/" },
-  { label: "developing", href: "/developing" },
-  { label: "creative", href: "/creative" },
-  { label: "socials", href: "/socials" },
-  { label: "osu!", href: "/osu" },
+  { label: "home", href: `${BASE}` },
+  { label: "developing", href: `${BASE}developing` },
+  { label: "creative", href: `${BASE}creative` },
+  { label: "socials", href: `${BASE}socials` },
+  { label: "osu!", href: `${BASE}osu` },
 ];
 
 const { current } = Astro.props;
@@ -12,7 +13,7 @@ const { current } = Astro.props;
 
 <nav class="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-bg/80 border-b border-border/50">
   <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
-    <a href="/" class="font-heading font-bold text-lg text-brand tracking-tight hover:scale-105 transition-transform duration-300">
+    <a href={BASE} class="font-heading font-bold text-lg text-brand tracking-tight hover:scale-105 transition-transform duration-300">
       K.
     </a>
 
