@@ -17,7 +17,8 @@ const DISCORD_ID = "249879411594100751";
           id="hero-avatar"
           src={`${import.meta.env.BASE_URL.replace(/\/$/, "")}/images/icon.png`}
           alt="Kaan"
-          class="w-28 h-28 rounded-full border-2 border-border mx-auto shadow-[0_0_40px_var(--color-brand-glow)] object-cover transition-transform duration-300 group-hover:scale-105"
+          class="w-28 h-28 rounded-full border-2 border-border mx-auto shadow-[0_0_40px_var(--color-brand-glow)] object-cover transition-all duration-500 group-hover:scale-105 opacity-0"
+          onload="this.style.opacity='1'"
         />
         <span
           id="hero-status"
@@ -172,7 +173,16 @@ const DISCORD_ID = "249879411594100751";
       if (avatarEl && data.discord_user.avatar) {
         const ext = data.discord_user.avatar.startsWith("a_") ? "gif" : "png";
         const url = `${CDN}/avatars/${data.discord_user.id}/${data.discord_user.avatar}.${ext}?size=256`;
-        avatarEl.src = url;
+
+        // Smooth swap: fade out → swap src → fade in
+        avatarEl.style.opacity = "0";
+        const preload = new Image();
+        preload.onload = () => {
+          avatarEl.src = url;
+          requestAnimationFrame(() => { avatarEl.style.opacity = "1"; });
+        };
+        preload.onerror = () => { avatarEl.style.opacity = "1"; };
+        preload.src = url;
 
         // Extract color once image loads
         const img = new Image();
