@@ -18,7 +18,6 @@ const DISCORD_ID = "249879411594100751";
           src={`${import.meta.env.BASE_URL.replace(/\/$/, "")}/images/icon.png`}
           alt="Kaan"
           class="w-28 h-28 rounded-full border-2 border-border mx-auto shadow-[0_0_40px_var(--color-brand-glow)] object-cover transition-all duration-500 group-hover:scale-105 opacity-0"
-          onload="this.style.opacity='1'"
         />
         <span
           id="hero-status"
@@ -165,26 +164,26 @@ const DISCORD_ID = "249879411594100751";
     try {
       const res = await fetch(`https://api.lanyard.rest/v1/users/${DISCORD_ID}`);
       const { data } = await res.json();
-      if (!data) return;
-
-      // Avatar + extract color
       const avatarEl = document.getElementById("hero-avatar");
       const nameEl = document.getElementById("hero-name");
-      if (avatarEl && data.discord_user.avatar) {
-        const ext = data.discord_user.avatar.startsWith("a_") ? "gif" : "png";
-        const url = `${CDN}/avatars/${data.discord_user.id}/${data.discord_user.avatar}.${ext}?size=256`;
 
-        // Smooth swap: fade out → swap src → fade in
-        avatarEl.style.opacity = "0";
-        const preload = new Image();
-        preload.onload = () => {
+      if (!data || !data.discord_user?.avatar) {
+        // Fallback: show icon.png if no Discord avatar
+        if (avatarEl) avatarEl.style.opacity = "1";
+        return;
+      }
+
+      const ext = data.discord_user.avatar.startsWith("a_") ? "gif" : "png";
+      const url = `${CDN}/avatars/${data.discord_user.id}/${data.discord_user.avatar}.${ext}?size=256`;
+
+      // Preload Discord avatar, then swap and reveal
+      const preload = new Image();
+      preload.onload = () => {
+        if (avatarEl) {
           avatarEl.src = url;
-          requestAnimationFrame(() => { avatarEl.style.opacity = "1"; });
-        };
-        preload.onerror = () => { avatarEl.style.opacity = "1"; };
-        preload.src = url;
-
-        // Extract color once image loads
+          avatarEl.style.opacity = "1";
+        }
+        // Extract color for name/glow
         const img = new Image();
         img.crossOrigin = "anonymous";
         img.src = url;
@@ -192,16 +191,19 @@ const DISCORD_ID = "249879411594100751";
           const color = extractDominantColor(img);
           if (color && nameEl) {
             nameEl.style.color = color;
-            // Update glow orbs to match
             const glow1 = document.getElementById("hero-glow-1");
             const glow2 = document.getElementById("hero-glow-2");
             if (glow1) glow1.style.backgroundColor = color.replace("rgb", "rgba").replace(")", ", 0.15)");
             if (glow2) glow2.style.backgroundColor = color.replace("rgb", "rgba").replace(")", ", 0.10)");
-            // Update avatar shadow
-            avatarEl.style.boxShadow = `0 0 40px ${color.replace("rgb", "rgba").replace(")", ", 0.25)")}`;
+            if (avatarEl) avatarEl.style.boxShadow = `0 0 40px ${color.replace("rgb", "rgba").replace(")", ", 0.25)")}`;
           }
         };
-      }
+      };
+      preload.onerror = () => { if (avatarEl) avatarEl.style.opacity = "1"; };
+      preload.src = url;
+
+      // Fallback timeout: show something after 3s
+      setTimeout(() => { if (avatarEl && avatarEl.style.opacity === "0") avatarEl.style.opacity = "1"; }, 3000);
 
       // Status dot
       const dot = document.getElementById("hero-status");
