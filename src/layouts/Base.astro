@@ -44,6 +44,18 @@ const {
       const t = localStorage.getItem("kaan-theme");
       if (t && t !== "peach") document.documentElement.setAttribute("data-theme", t);
     </script>
+    <script is:inline>
+      fetch("https://api.lanyard.rest/v1/users/249879411594100751")
+        .then(r => r.json())
+        .then(({ data }) => {
+          if (!data?.discord_user?.avatar) return;
+          const ext = data.discord_user.avatar.startsWith("a_") ? "gif" : "png";
+          const url = `https://cdn.discordapp.com/avatars/249879411594100751/${data.discord_user.avatar}.${ext}?size=128`;
+          const link = document.querySelector("link[rel='icon']");
+          if (link) { link.href = url; link.type = ext === "gif" ? "image/gif" : "image/png"; }
+        })
+        .catch(() => {});
+    </script>
   </head>
   <body class="min-h-screen bg-bg text-text antialiased">
     <slot />
