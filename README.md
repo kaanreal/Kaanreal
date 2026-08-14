@@ -43,12 +43,12 @@
 ```text
 📂 latest projects
 
+├── 🌸 dotfiles
+├── 🌸 AI-generated-vibrojack
 ├── 🌸 homebrew-tap
 ├── 🌸 mori
 ├── 🌸 henkan
-├── 🌸 AI-generated-vibrojack
 ├── 🌸 jukebox
-├── 🌸 osu-tag
 ```
 <!-- END_SECTION:projects -->
 
