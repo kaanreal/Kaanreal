@@ -43,9 +43,9 @@
 ```text
 📂 latest projects
 
+├── 🌸 dotfiles
 ├── 🌸 henkan
 ├── 🌸 homebrew-tap
-├── 🌸 dotfiles
 ├── 🌸 AI-generated-vibrojack
 ├── 🌸 mori
 ├── 🌸 jukebox
