@@ -43,12 +43,12 @@
 ```text
 📂 latest projects
 
+├── 🌸 pounce
 ├── 🌸 dotfiles
 ├── 🌸 henkan
 ├── 🌸 homebrew-tap
 ├── 🌸 AI-generated-vibrojack
 ├── 🌸 mori
-├── 🌸 jukebox
 ```
 <!-- END_SECTION:projects -->
 
