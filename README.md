@@ -43,11 +43,11 @@
 ```text
 📂 latest projects
 
+├── 🌸 henkan
+├── 🌸 AI-generated-vibrojack
 ├── 🌸 dotfiles
 ├── 🌸 homebrew-tap
-├── 🌸 henkan
 ├── 🌸 pounce
-├── 🌸 AI-generated-vibrojack
 ├── 🌸 mori
 ```
 <!-- END_SECTION:projects -->
