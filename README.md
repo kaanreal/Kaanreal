@@ -43,8 +43,8 @@
 ```text
 📂 latest projects
 
-├── 🌸 osu-tag
 ├── 🌸 dotfiles
+├── 🌸 osu-tag
 ├── 🌸 pounce
 ├── 🌸 henkan
 ├── 🌸 AI-generated-vibrojack
