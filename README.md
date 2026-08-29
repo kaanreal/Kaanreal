@@ -43,10 +43,10 @@
 ```text
 📂 latest projects
 
+├── 🌸 henkan
 ├── 🌸 dotfiles
 ├── 🌸 osu-tag
 ├── 🌸 pounce
-├── 🌸 henkan
 ├── 🌸 AI-generated-vibrojack
 ├── 🌸 homebrew-tap
 ```
