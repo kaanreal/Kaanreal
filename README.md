@@ -44,11 +44,11 @@
 📂 latest projects
 
 ├── 🌸 henkan
+├── 🌸 homebrew-tap
 ├── 🌸 dotfiles
 ├── 🌸 osu-tag
 ├── 🌸 pounce
 ├── 🌸 AI-generated-vibrojack
-├── 🌸 homebrew-tap
 ```
 <!-- END_SECTION:projects -->
 
