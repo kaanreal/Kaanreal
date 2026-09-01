@@ -43,12 +43,12 @@
 ```text
 📂 latest projects
 
+├── 🌸 selfaware
 ├── 🌸 henkan
 ├── 🌸 homebrew-tap
 ├── 🌸 dotfiles
 ├── 🌸 osu-tag
 ├── 🌸 pounce
-├── 🌸 AI-generated-vibrojack
 ```
 <!-- END_SECTION:projects -->
 
