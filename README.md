@@ -43,11 +43,11 @@
 ```text
 📂 latest projects
 
+├── 🌸 osu-tag
 ├── 🌸 selfaware
 ├── 🌸 henkan
 ├── 🌸 homebrew-tap
 ├── 🌸 dotfiles
-├── 🌸 osu-tag
 ├── 🌸 pounce
 ```
 <!-- END_SECTION:projects -->
