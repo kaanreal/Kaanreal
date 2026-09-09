@@ -6,4 +6,5 @@ export const site = {
   email: "info@kaanreal.me",
   github: "https://github.com/Kaanreal",
   coffee: "https://buymeacoffee.com/kaandev",
+  discordId: "249879411594100751",
 } as const;

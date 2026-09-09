@@ -1,5 +1,6 @@
 ---
 import Category from "@/layouts/Category.astro";
+import { site } from "@/data/site";
 
 const works = [
   {
@@ -63,7 +64,7 @@ const works = [
 
   <!-- CTA -->
   <a
-    href="https://discord.com/users/249879411594100751"
+    href={`https://discord.com/users/${site.discordId}`}
     target="_blank"
     rel="noopener noreferrer"
     class="group block bg-bg-card border border-dashed border-border rounded-xl p-6 text-center card-hover"

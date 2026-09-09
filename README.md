@@ -108,7 +108,7 @@ and playing osu!mania ofcourse.
 
 <div align="center">
 
-<img width=300 src="./assets/main.gif"/>
+<img width=300 src="./public/images/main.gif"/>
 
 ### thanks for stopping by ♡
 

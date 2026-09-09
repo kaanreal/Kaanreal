@@ -6,7 +6,7 @@ const categories = [
   { label: "creative", href: `${BASE}/creative` },
   { label: "socials", href: `${BASE}/socials` },
   { label: "random", href: `${BASE}/random` },
-  { label: "osu!", href: `${BASE}/osu` },
+  { label: "osu!", href: `${BASE}/osu`, match: "osu" },
 ];
 
 const { current } = Astro.props;
@@ -24,7 +24,7 @@ const { current } = Astro.props;
           href={cat.href}
           class:list={[
             "text-sm px-4 py-1.5 rounded-full transition-all duration-300",
-            current === cat.label
+            current === (cat.match || cat.label)
               ? "bg-brand/10 text-brand font-medium"
               : "text-text-muted hover:text-text",
           ]}

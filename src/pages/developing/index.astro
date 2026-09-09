@@ -1,29 +1,8 @@
 ---
 import Category from "@/layouts/Category.astro";
+import { fetchRepos } from "@/lib/github";
 
-const USERNAME = "Kaanreal";
-const LANG_COLORS: Record<string, string> = {
-  JavaScript: "#f1e05a", TypeScript: "#3178c6", Python: "#3572A5",
-  Java: "#b07219", "C++": "#f34b7d", C: "#555555", "C#": "#178600",
-  HTML: "#e34c26", CSS: "#563d7c", Rust: "#dea584", Go: "#00ADD8",
-  Ruby: "#701516", Swift: "#F05138", Kotlin: "#A97BFF", Dart: "#00B4AB",
-  Shell: "#89e051", Lua: "#000080", Zig: "#ec915c", Nix: "#7e7eff",
-  "Objective-C": "#438eff", PHP: "#4F5D95", R: "#198CE7",
-};
-
-let repos: any[] = [];
-try {
-  const res = await fetch(`https://api.github.com/users/${USERNAME}/repos?sort=updated&per_page=100`);
-  const data = await res.json();
-  if (Array.isArray(data)) {
-    repos = data
-      .filter((r: any) => !r.fork && r.name.toLowerCase() !== "kaanreal")
-      .slice(0, 12)
-      .map((r: any) => ({ ...r, langColor: LANG_COLORS[r.language] || "#8b8b8b" }));
-  }
-} catch (e) {
-  console.error("Failed to fetch repos:", e);
-}
+const repos = await fetchRepos(12);
 ---
 
 <Category
@@ -66,12 +45,3 @@ try {
     ))}
   </div>
 </Category>
-
-<style>
-  .line-clamp-2 {
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-</style>
