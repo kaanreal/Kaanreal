@@ -45,10 +45,10 @@
 
 ├── 🌸 homebrew-tap
 ├── 🌸 henkan
-├── 🌸 AI-generated-vibrojack
-├── 🌸 jukebox
+├── 🌸 pounce
 ├── 🌸 osu-tag
-├── 🌸 Portfolio
+├── 🌸 selfaware
+├── 🌸 dotfiles
 ```
 <!-- END_SECTION:projects -->
 
