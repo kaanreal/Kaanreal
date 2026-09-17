@@ -43,9 +43,9 @@
 ```text
 📂 latest projects
 
+├── 🌸 selfaware
 ├── 🌸 henkan
 ├── 🌸 pounce
-├── 🌸 selfaware
 ├── 🌸 homebrew-tap
 ├── 🌸 osu-tag
 ├── 🌸 dotfiles
