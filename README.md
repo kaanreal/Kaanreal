@@ -43,8 +43,8 @@
 ```text
 📂 latest projects
 
-├── 🌸 selfaware
 ├── 🌸 henkan
+├── 🌸 selfaware
 ├── 🌸 pounce
 ├── 🌸 homebrew-tap
 ├── 🌸 osu-tag
