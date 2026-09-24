@@ -43,10 +43,10 @@
 ```text
 📂 latest projects
 
-├── 🌸 selfaware
 ├── 🌸 henkan
-├── 🌸 pounce
 ├── 🌸 homebrew-tap
+├── 🌸 selfaware
+├── 🌸 pounce
 ├── 🌸 osu-tag
 ├── 🌸 dotfiles
 ```
