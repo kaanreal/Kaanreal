@@ -17,7 +17,7 @@
 
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
   --font-heading: "Quicksand", "Nunito", system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", "Fira Code", ui-monospace, monospace;
+  --font-hand: "Caveat", "Segoe Script", cursive;
 }
 
 /* --- Themes --- */
@@ -90,9 +90,9 @@
 /* --- Dark mode --- */
 
 [data-mode="dark"] {
-  --color-bg: #141018;
-  --color-bg-card: #1E1824;
-  --color-bg-elevated: #231D2B;
+  --color-bg: #17121C;
+  --color-bg-card: #201A27;
+  --color-bg-elevated: #251E2E;
   --color-text: #F0E6F4;
   --color-text-muted: #9A88A4;
   --color-border: #2E2636;
@@ -101,8 +101,8 @@
 }
 
 [data-mode="dark"][data-theme="lavender"] {
-  --color-bg: #16101F;
-  --color-bg-card: #1E1728;
+  --color-bg: #191024;
+  --color-bg-card: #201731;
   --color-text: #EDE4F8;
   --color-text-muted: #9688B0;
   --color-border: #2A2238;
@@ -111,8 +111,8 @@
 }
 
 [data-mode="dark"][data-theme="mint"] {
-  --color-bg: #0E1814;
-  --color-bg-card: #162420;
+  --color-bg: #101B16;
+  --color-bg-card: #172420;
   --color-text: #E0F4EC;
   --color-text-muted: #7AAA98;
   --color-border: #1E3028;
@@ -121,8 +121,8 @@
 }
 
 [data-mode="dark"][data-theme="rose"] {
-  --color-bg: #181014;
-  --color-bg-card: #241820;
+  --color-bg: #1B1118;
+  --color-bg-card: #251822;
   --color-text: #F4E2EC;
   --color-text-muted: #B08898;
   --color-border: #301E28;
@@ -131,8 +131,8 @@
 }
 
 [data-mode="dark"][data-theme="ocean"] {
-  --color-bg: #0E1420;
-  --color-bg-card: #162030;
+  --color-bg: #101622;
+  --color-bg-card: #172030;
   --color-text: #E0ECF8;
   --color-text-muted: #88A0B8;
   --color-border: #1E2A3A;
@@ -141,8 +141,8 @@
 }
 
 [data-mode="dark"][data-theme="sunset"] {
-  --color-bg: #181410;
-  --color-bg-card: #241C16;
+  --color-bg: #1B1510;
+  --color-bg-card: #251D15;
   --color-text: #F4EAE0;
   --color-text-muted: #B09878;
   --color-border: #30281E;
@@ -177,6 +177,14 @@
   src: url("https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfAZ9hjQ.woff2") format("woff2");
 }
 
+@font-face {
+  font-family: "Caveat";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("https://fonts.gstatic.com/s/caveat/v23/Wnz6HAc5bAfYB2Q7ZjYY.woff2") format("woff2");
+}
+
 *,
 *::before,
 *::after {
@@ -192,6 +200,8 @@ body {
   font-family: var(--font-sans);
   color: var(--color-text);
   background-color: var(--color-bg);
+  background-image: radial-gradient(circle, color-mix(in srgb, var(--color-text) 9%, transparent) 1px, transparent 1.5px);
+  background-size: 22px 22px;
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
@@ -226,6 +236,56 @@ h1, h2, h3, h4 {
   background: var(--color-secondary);
 }
 
+/* --- Paper helpers --- */
+
+/* Handwritten annotation under a photo etc. */
+.hand-note {
+  font-family: var(--font-hand);
+  font-size: 1.15rem;
+  line-height: 1.1;
+  color: var(--color-text-muted);
+}
+
+/* Washi tape strip */
+.tape {
+  display: inline-block;
+  height: 1.4rem;
+  width: 5.5rem;
+  background: color-mix(in srgb, var(--color-brand) 34%, transparent);
+  opacity: 0.85;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+}
+[data-mode="dark"] .tape {
+  background: color-mix(in srgb, var(--color-brand) 40%, #000 15%);
+}
+
+.tape-pink { background: rgba(212, 112, 130, 0.5); }
+.tape-yellow { background: rgba(230, 200, 110, 0.5); }
+.tape-purple { background: rgba(165, 130, 210, 0.5); }
+.tape-mint { background: rgba(110, 185, 155, 0.5); }
+.tape-blue { background: rgba(110, 160, 215, 0.5); }
+.tape-orange { background: rgba(225, 150, 90, 0.5); }
+[data-mode="dark"] .tape-pink,
+[data-mode="dark"] .tape-yellow,
+[data-mode="dark"] .tape-purple,
+[data-mode="dark"] .tape-mint,
+[data-mode="dark"] .tape-blue,
+[data-mode="dark"] .tape-orange {
+  filter: brightness(0.8);
+}
+
+/* Lifted easily on hover, like nudging paper */
+.card-hover {
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.35s ease,
+              border-color 0.35s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px) rotate(0deg);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+  border-color: var(--color-border-hover);
+}
+
 /* --- Animations --- */
 
 @keyframes fade-in-up {
@@ -238,20 +298,14 @@ h1, h2, h3, h4 {
   to { opacity: 1; }
 }
 
-@keyframes glow-pulse {
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 0.8; }
+@keyframes float-soft {
+  0%, 100% { transform: translateY(0) rotate(var(--tilt-angle, 0deg)); }
+  50% { transform: translateY(-10px) rotate(var(--tilt-angle, 0deg)); }
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
-
-@keyframes gradient-shift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+@keyframes float-swing {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
 }
 
 @keyframes blink-caret {
@@ -259,15 +313,14 @@ h1, h2, h3, h4 {
   50% { opacity: 0; }
 }
 
-@keyframes bounce-in {
-  0% { transform: scale(0.95); opacity: 0; }
-  60% { transform: scale(1.02); }
-  100% { transform: scale(1); opacity: 1; }
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
 }
 
-@keyframes slide-in-right {
-  from { opacity: 0; transform: translateX(40px); }
-  to { opacity: 1; transform: translateX(0); }
+@keyframes settle-in {
+  0% { opacity: 0; transform: rotate(var(--tilt-angle, 0deg)) scale(0.94); }
+  100% { opacity: 1; transform: rotate(var(--tilt-angle, 0deg)) scale(1); }
 }
 
 .animate-fade-in-up {
@@ -278,48 +331,20 @@ h1, h2, h3, h4 {
   animation: fade-in 0.6s ease both;
 }
 
-.animate-float {
-  animation: float 4s ease-in-out infinite;
+.animate-float-soft {
+  animation: float-soft 4.5s ease-in-out infinite;
 }
 
-.animate-glow {
-  animation: glow-pulse 3s ease-in-out infinite;
+.animate-float-swing {
+  animation: float-swing 3.5s ease-in-out infinite;
 }
 
-.animate-bounce-in {
-  animation: bounce-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+.animate-wiggle {
+  animation: wiggle 2.5s ease-in-out infinite;
 }
 
-/* Stagger children */
-.stagger > * {
-  animation: fade-in-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-.stagger > *:nth-child(1) { animation-delay: 0.05s; }
-.stagger > *:nth-child(2) { animation-delay: 0.12s; }
-.stagger > *:nth-child(3) { animation-delay: 0.19s; }
-.stagger > *:nth-child(4) { animation-delay: 0.26s; }
-.stagger > *:nth-child(5) { animation-delay: 0.33s; }
-.stagger > *:nth-child(6) { animation-delay: 0.40s; }
-
-/* Card hover */
-.card-hover {
-  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-              box-shadow 0.35s ease,
-              border-color 0.35s ease;
-}
-.card-hover:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 48px var(--color-brand-glow);
-  border-color: var(--color-border-hover);
-}
-
-/* Hero glow orb */
-.glow-orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  animation: glow-pulse 4s ease-in-out infinite;
-  pointer-events: none;
+.animate-settle-in {
+  animation: settle-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -7,31 +7,37 @@ const repos = await fetchRepos(12);
 
 <Category
   title="developing"
-  description="Things I've built, am building, or plan to build. Most of these are side projects , tools, experiments, and whatever catches my interest."
+  description="Things I've built, am building, or plan to build. Most of these are side projects, tools, experiments, and whatever catches my interest."
   current="developing"
 >
   <!-- Story -->
-  <div class="mb-10 bg-bg-card border border-dashed border-border rounded-xl px-5 py-4 max-w-lg mx-auto">
+  <div class="mb-10 bg-bg-elevated border border-border rounded-xl px-6 py-5 max-w-lg mx-auto relative rotate-[0.5deg]">
+    <span class="tape tape-yellow absolute -top-2.5 left-6 rotate-[-6deg]"></span>
     <p class="text-sm text-text-muted leading-relaxed text-center">
-    most projects begin as a <em class="text-text/60">"wouldn't it be cool if..."</em> moment. Some ship, most teach me something unexpected 
+      most projects begin as a <em class="text-text/60">"wouldn't it be cool if..."</em> moment. Some ship, most teach me something unexpected
     </p>
   </div>
 
   <!-- Projects -->
-  <div class="grid sm:grid-cols-2 gap-3">
-    {repos.map((repo) => (
+  <div class="grid sm:grid-cols-2 gap-8">
+    {repos.map((repo, i) => (
       <a href={repo.html_url} target="_blank" rel="noopener noreferrer"
-         class="group block bg-bg-card border border-border rounded-xl p-5 card-hover">
+         class:list={[
+           "group relative block bg-bg-card border border-border rounded-xl p-5 card-hover",
+           i % 3 === 0 ? "-rotate-1" : i % 3 === 1 ? "rotate-[0.5deg] sm:translate-y-4" : "rotate-1",
+         ]}>
+        <div class:list={["tape absolute -top-2.5 left-1/2 -translate-x-1/2 rotate-[-2deg]",
+                          i % 3 === 1 ? "tape-mint" : i % 3 === 2 ? "tape-purple" : "tape-pink"]}></div>
         <div class="flex items-start justify-between mb-2">
-          <h3 class="text-sm font-semibold text-text group-hover:text-brand transition-colors duration-300 truncate">
+          <h3 class="font-heading text-lg font-bold text-text group-hover:text-brand transition-colors duration-300 truncate">
             {repo.name}
           </h3>
           <span class="text-text-muted/30 group-hover:text-brand text-xs transition-colors duration-300 flex-shrink-0 ml-2">↗</span>
         </div>
-        <p class="text-xs text-text-muted leading-relaxed mb-4 line-clamp-2">
-          {repo.description || "No description"}
+        <p class="text-sm text-text-muted leading-relaxed mb-4 line-clamp-2">
+          {repo.description || "no description yet, it's a secret 🤫"}
         </p>
-        <div class="flex items-center gap-3 text-[11px] text-text-muted/70">
+        <div class="flex items-center gap-3 text-xs text-text-muted/70">
           {repo.language && (
             <span class="flex items-center gap-1.5">
               <span class="w-2 h-2 rounded-full" style={`background-color: ${repo.langColor}`}></span>

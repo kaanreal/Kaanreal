@@ -12,21 +12,21 @@ const categories = [
 const { current } = Astro.props;
 ---
 
-<nav class="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-bg/80 border-b border-border/50">
-  <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
-    <a href={`${BASE}/`} class="font-heading font-bold text-lg text-brand tracking-tight hover:scale-105 transition-transform duration-300">
-      K.
+<nav class="fixed top-4 left-1/2 -translate-x-1/2 z-50">
+  <div class="flex items-center gap-1 bg-bg-card/90 backdrop-blur-md border border-border rounded-full px-3 py-2 shadow-[0_8px_24px_rgba(0,0,0,0.06)]">
+    <a href={`${BASE}/`} class="w-8 h-8 rounded-full bg-brand text-white font-heading font-bold flex items-center justify-center rotate-[-8deg] hover:rotate-0 transition-transform duration-300 mr-2 text-lg" aria-label="Home">
+      K
     </a>
 
-    <div class="flex items-center gap-1">
+    <div class="flex items-center gap-0.5">
       {categories.map((cat) => (
         <a
           href={cat.href}
           class:list={[
-            "text-sm px-4 py-1.5 rounded-full transition-all duration-300",
+            "text-sm px-3 py-1.5 rounded-full transition-all duration-300",
             current === (cat.match || cat.label)
               ? "bg-brand/10 text-brand font-medium"
-              : "text-text-muted hover:text-text",
+              : "text-text-muted hover:text-text hover:-rotate-2 hover:scale-105",
           ]}
         >
           {cat.label}
