@@ -2,8 +2,8 @@ import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  base: "/Kaanreal",
-  site: "https://kaanreal.github.io",
+  base: "/",
+  site: "https://kaan.moe",
   vite: {
     plugins: [tailwindcss()],
   },
