@@ -43,12 +43,12 @@
 ```text
 📂 latest projects
 
+├── 🌸 pounce
 ├── 🌸 stayalive
 ├── 🌸 trustmechordjack
 ├── 🌸 henkan
 ├── 🌸 osu-tag
 ├── 🌸 homebrew-tap
-├── 🌸 selfaware
 ```
 <!-- END_SECTION:projects -->
 
