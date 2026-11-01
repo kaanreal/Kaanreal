@@ -43,9 +43,9 @@
 ```text
 📂 latest projects
 
+├── 🌸 trustmechordjack
 ├── 🌸 pounce
 ├── 🌸 stayalive
-├── 🌸 trustmechordjack
 ├── 🌸 henkan
 ├── 🌸 osu-tag
 ├── 🌸 homebrew-tap
