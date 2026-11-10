@@ -43,12 +43,12 @@
 ```text
 📂 latest projects
 
+├── 🌸 MagicMirror
 ├── 🌸 trustmechordjack
 ├── 🌸 pounce
 ├── 🌸 stayalive
 ├── 🌸 henkan
 ├── 🌸 osu-tag
-├── 🌸 homebrew-tap
 ```
 <!-- END_SECTION:projects -->
 
