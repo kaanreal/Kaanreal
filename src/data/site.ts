@@ -3,7 +3,7 @@ export const site = {
   title: "Kaan - Developer & Builder",
   tagline: "i log and document the skills i learn here.",
   description: "Logging and documenting the skills I learn.",
-  email: "info@kaanreal.me",
+  email: "mail@kaan.moe",
   github: "https://github.com/Kaanreal",
   coffee: "https://buymeacoffee.com/kaandev",
   discordId: "249879411594100751",

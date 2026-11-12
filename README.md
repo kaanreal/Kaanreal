@@ -13,7 +13,7 @@
 </p>
 
 <p>
-  <a href="mailto:info@kaanreal.me">
+  <a href="mailto:mail@kaan.moe">
     <img src="https://img.shields.io/badge/email-f4b6c2?style=for-the-badge&logo=gmail&logoColor=white">
   </a>
   <a href="https://buymeacoffee.com/kaandev">
